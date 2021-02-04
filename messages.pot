@@ -19,5 +19,5 @@ msgstr ""
 
 #: templates/layout.html:26
 msgid "World Health Organization"
-msgstr ""
+msgstr "Organización Mundial de la Salud"
 
