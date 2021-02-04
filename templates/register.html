@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <h1>Register</h1>
+    <form action="/register" method="post" oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'>
+        <div class="form-group">
+            <label for="validationDefault01">Name</label>
+            <input autocomplete="off" type="text" class="form-control" id="validationDefault01" name="name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+            <label for="validationDefault02">Email</label>
+            <input autocomplete="off" type="email" class="form-control" id="validationDefault02" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="validationDefault03">Password</label>
+            <input autocomplete="off" type="password" class="form-control" id="validationDefault03" name="password" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+            <label for="validationDefault03">Confirm Password</label>
+            <input type="password" class="form-control" id="validationDefault04" name="password2" placeholder="Password (again)" required>
+        </div>
+        <button class="button" type="submit">Register</button>
+    </form>
+
+    <!-- Modal -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form action="/login" method="post">
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" type="email" id="email" align="left"  required>
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input autocomplete="off" autofocus class="form-control" name="password" placeholder="Password" type="password" id="password" required>
+                  </div>
+                  <button class="button" type="submit">Log In</button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
